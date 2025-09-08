@@ -1,0 +1,1 @@
+meson install -C build --destdir=mpv-windows-x64

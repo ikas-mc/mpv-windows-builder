@@ -1,0 +1,69 @@
+name: build mpv
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env: 
+      USERNAME: ikas-mc
+      FEED_URL: https://nuget.pkg.github.com/ikas-mc/index.json
+      VCPKG_BINARY_SOURCES: "clear;nuget,https://nuget.pkg.github.com/ikas-mc/index.json,readwrite"
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: msvc
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Add NuGet sources
+      shell: pwsh
+      run: |
+        .$(vcpkg.exe fetch nuget) `
+          sources add `
+          -Source "${{ env.FEED_URL }}" `
+          -StorePasswordInClearText `
+          -Name GitHubPackages `
+          -UserName "${{ env.USERNAME }}" `
+          -Password "${{ secrets.GH_PACKAGES_TOKEN }}"
+        .$(vcpkg.exe fetch nuget) `
+          setapikey "${{ secrets.GH_PACKAGES_TOKEN }}" `
+          -Source "${{ env.FEED_URL }}"
+
+    - name: tools
+      run: |
+        python -m pip install meson
+        pip3 install jinja2
+        Invoke-WebRequest -Uri https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-pkgconf-1~2.5.1-1-any.pkg.tar.zst -OutFile pkg.tar.zst 
+        cmd /c "C:\Program Files\7-Zip\7zG.exe" x pkg.tar.zst
+        cmd /c "C:\Program Files\7-Zip\7zG.exe" x pkg.tar -opkg-config
+
+    - name: build deps
+      run: |
+        $env:PATH = ($env:PATH -split ';' | Where-Object { $_ -ne 'C:\Program Files\LLVM\bin' -and `
+                                                           $_ -ne 'C:\Program Files\CMake\bin' -and `
+                                                           $_ -ne 'C:\Strawberry\c\bin' }) -join ';'
+        $env:VS_ROOT="C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
+        $env:VCPKG_ROOT=$env:VCPKG_INSTALLATION_ROOT
+        .\build-deps.ps1
+
+    - name: build mpv
+      run: |
+        $env:PATH = ($env:PATH -split ';' | Where-Object { $_ -ne 'C:\Program Files\LLVM\bin' -and `
+                                                           $_ -ne 'C:\Program Files\CMake\bin' -and `
+                                                           $_ -ne 'C:\Strawberry\c\bin' }) -join ';'
+        $env:VS_ROOT="C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
+        .\build-mpv.ps1
+
+    - name: Print build log
+      if: ${{ failure() && steps.build.outcome == 'failure' }}
+      run: |
+        cat ./app/build/meson-logs/meson-log.txt
+
+    - name: upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: mpv-windows
+        path: |
+          mpv-builder\mpv-windows\build\mpv-windows-x64

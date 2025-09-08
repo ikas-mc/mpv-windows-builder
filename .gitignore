@@ -1,0 +1,5 @@
+mpv-deps-builder/build
+mpv-deps-builder/vcpkg_installed
+mpv-builder/mpv-uwp
+mpv-builder/mpv-windows
+pkg-config
