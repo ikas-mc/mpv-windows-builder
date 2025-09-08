@@ -11,6 +11,10 @@
 - [vcpkg](https://github.com/microsoft/vcpkg)
 - Visual Studio 2022 (with C++ llvm toolset)
 
+## Build 
+- see action/build-mpv.yml
+- use --genvslite=vs2022 for visual studio ide
+
 
 ## References
 - [Custom vcpkg triplets](https://github.com/Neumann-A/my-vcpkg-triplets)
