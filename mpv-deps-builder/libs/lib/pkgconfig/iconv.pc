@@ -1,0 +1,10 @@
+prefix=${pcfiledir}/../..
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: iconv
+Description: win-iconv is an iconv implementation using Win32 API to convert.
+Version: 0.0.10
+
+Libs: "-L${libdir}" -liconv
+Cflags: "-I${includedir}" 

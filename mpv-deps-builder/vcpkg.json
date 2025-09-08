@@ -1,0 +1,51 @@
+{
+  "dependencies": [
+    "bzip2",
+    "expat",
+    "openssl",
+    {
+      "name": "ffmpeg",
+      "features": [
+        "gpl",
+        "openssl",
+        "xml2",
+        "aom",
+        "dav1d",
+        "nvcodec",
+        "webp"
+      ]
+    },
+    "openssl",
+    {
+      "name": "harfbuzz",
+      "features": [
+        "directwrite"
+      ]
+    },
+     {
+      "name": "lcms",
+      "features": [
+        "fastfloat"
+      ]
+    },
+    "dirent",
+    "libass",
+    "ffnvcodec",
+    "freetype",
+    "fribidi",
+    "brotli",
+    "gperf",
+    "libpng",
+    "libunibreak",
+    "shaderc",
+    "spirv-cross",
+    "xxhash",
+    "zlib",
+    "uchardet",
+    "libiconv",
+    "vulkan-headers",
+    "luajit",
+    "mujs",
+    "libjxl"
+  ]
+}
