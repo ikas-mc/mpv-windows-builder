@@ -61,9 +61,23 @@ jobs:
       run: |
         cat ./app/build/meson-logs/meson-log.txt
 
-    - name: upload
+    - name: upload mpv.exe
       uses: actions/upload-artifact@v4
       with:
-        name: mpv-windows
+        name: mpv.exe
         path: |
-          mpv-builder\mpv-windows\build\mpv-windows-x64
+          mpv-builder\mpv-windows\build\mpv-windows-x64\bin\mpv.exe
+          mpv-builder\mpv-windows\build\mpv-windows-x64\bin\mpv.pdb
+          mpv-builder\mpv-windows\build\mpv-windows-x64\share\doc
+          mpv-builder\mpv-windows\build\mpv-windows-x64\share\metainfo
+
+    - name: upload mpv-2.dll
+      uses: actions/upload-artifact@v4
+      with:
+        name: mpv-2.dll
+        path: |
+          mpv-builder\mpv-windows\build\mpv-windows-x64\bin\mpv-2.dll
+          mpv-builder\mpv-windows\build\mpv-windows-x64\bin\mpv-2.pdb
+          mpv-builder\mpv-windows\build\mpv-windows-x64\include
+          mpv-builder\mpv-windows\build\mpv-windows-x64\lib
+          mpv-builder\mpv-windows\build\mpv-windows-x64\share
