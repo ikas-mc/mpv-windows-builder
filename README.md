@@ -5,6 +5,14 @@
 ## Overview
 - Deps by vcpkg with clang-cl
 - Only d3d11
+- Only mpv.exe, windows >= 24H2(26100), see https://github.com/mpv-player/mpv/pull/15039
+
+```
+mpv.exe --v
+[cplayer] Command line options: '--v'
+[cplayer] mpv v0.40.0-UNKNOWN Copyright © 2000-2025 mpv/MPlayer/mplayer2 projects
+```
+
 
 
 ## Requirements
