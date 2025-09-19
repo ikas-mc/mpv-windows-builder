@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap uap3 uap10 desktop rescap">
+  <Identity Name="mpv" Publisher="CN=ikas-mc-dev" Version="0.40.0.0" ProcessorArchitecture="x64" />
+  <Properties>
+    <DisplayName>mpv</DisplayName>
+    <PublisherDisplayName>ikas-mc</PublisherDisplayName>
+    <Description>mpv player unofficial</Description>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <uap10:PackageIntegrity>
+      <uap10:Content Enforcement="on" />
+    </uap10:PackageIntegrity>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+  <Applications>
+    <Application Id="MPV" Executable="mpv.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements BackgroundColor="transparent" DisplayName="mpv" Square150x150Logo="Assets\MPV-Square150x150Logo.png" Square44x44Logo="Assets\MPV-Square44x44Logo.png" Description="mpv">
+        <uap:DefaultTile Wide310x150Logo="Assets\MPV-Wide310x150Logo.png" Square310x310Logo="Assets\MPV-Square310x310Logo.png" Square71x71Logo="Assets\MPV-Square71x71Logo.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="mpv">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.3g2</uap:FileType>
+              <uap:FileType>.3gp</uap:FileType>
+              <uap:FileType>.avi</uap:FileType>
+              <uap:FileType>.flv</uap:FileType>
+              <uap:FileType>.ivf</uap:FileType>
+              <uap:FileType>.m2ts</uap:FileType>
+              <uap:FileType>.m4v</uap:FileType>
+              <uap:FileType>.mj2</uap:FileType>
+              <uap:FileType>.mkv</uap:FileType>
+              <uap:FileType>.mov</uap:FileType>
+              <uap:FileType>.mp4</uap:FileType>
+              <uap:FileType>.mpeg</uap:FileType>
+              <uap:FileType>.mpg</uap:FileType>
+              <uap:FileType>.ogv</uap:FileType>
+              <uap:FileType>.rmvb</uap:FileType>
+              <uap:FileType>.ts</uap:FileType>
+              <uap:FileType>.webm</uap:FileType>
+              <uap:FileType>.wmv</uap:FileType>
+              <uap:FileType>.y4m</uap:FileType>
+              <uap:FileType>.aac</uap:FileType>
+              <uap:FileType>.ac3</uap:FileType>
+              <uap:FileType>.aiff</uap:FileType>
+              <uap:FileType>.ape</uap:FileType>
+              <uap:FileType>.au</uap:FileType>
+              <uap:FileType>.dts</uap:FileType>
+              <uap:FileType>.eac3</uap:FileType>
+              <uap:FileType>.flac</uap:FileType>
+              <uap:FileType>.m4a</uap:FileType>
+              <uap:FileType>.mka</uap:FileType>
+              <uap:FileType>.mp3</uap:FileType>
+              <uap:FileType>.oga</uap:FileType>
+              <uap:FileType>.ogg</uap:FileType>
+              <uap:FileType>.ogm</uap:FileType>
+              <uap:FileType>.opus</uap:FileType>
+              <uap:FileType>.thd</uap:FileType>
+              <uap:FileType>.wav</uap:FileType>
+              <uap:FileType>.wma</uap:FileType>
+              <uap:FileType>.wv</uap:FileType>
+              <uap:FileType>.avif</uap:FileType>
+              <uap:FileType>.bmp</uap:FileType>
+              <uap:FileType>.gif</uap:FileType>
+              <uap:FileType>.heic</uap:FileType>
+              <uap:FileType>.heif</uap:FileType>
+              <uap:FileType>.j2k</uap:FileType>
+              <uap:FileType>.jp2</uap:FileType>
+              <uap:FileType>.jpeg</uap:FileType>
+              <uap:FileType>.jpg</uap:FileType>
+              <uap:FileType>.jxl</uap:FileType>
+              <uap:FileType>.png</uap:FileType>
+              <uap:FileType>.qoi</uap:FileType>
+              <uap:FileType>.svg</uap:FileType>
+              <uap:FileType>.tga</uap:FileType>
+              <uap:FileType>.tif</uap:FileType>
+              <uap:FileType>.tiff</uap:FileType>
+              <uap:FileType>.webp</uap:FileType>
+              <uap:FileType>.zip</uap:FileType>
+              <uap:FileType>.rar</uap:FileType>
+              <uap:FileType>.7z</uap:FileType>
+              <uap:FileType>.cbz</uap:FileType>
+              <uap:FileType>.cbr</uap:FileType>
+              <uap:FileType>.cue</uap:FileType>
+              <uap:FileType>.edl</uap:FileType>
+              <uap:FileType>.m3u</uap:FileType>
+              <uap:FileType>.m3u8</uap:FileType>
+              <uap:FileType>.pls</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol" uap10:Parameters="--" EntryPoint="Windows.FullTrustApplication">
+          <uap:Protocol Name="mpv">
+          </uap:Protocol>
+        </uap:Extension>
+        <uap3:Extension Category="windows.appExecutionAlias" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="mpv.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
