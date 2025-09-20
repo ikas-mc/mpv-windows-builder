@@ -15,7 +15,7 @@ meson setup build `
     -Djavascript=enabled `
     -Dcplugins=enabled `
     -Drubberband=disabled `
-    -Dlibarchive=disabled `
+    -Dlibarchive=enabled `
     -Dlibbluray=disabled `
     -Ddrm=disabled `
     -Dzimg=disabled `
