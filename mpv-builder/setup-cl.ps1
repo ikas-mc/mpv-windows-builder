@@ -16,7 +16,7 @@ meson setup build `
     -Dcplugins=enabled `
     -Drubberband=disabled `
     -Dlibarchive=enabled `
-    -Dlibbluray=disabled `
+    -Dlibbluray=enabled `
     -Ddrm=disabled `
     -Dzimg=disabled `
     -Djpeg=disabled  `
@@ -37,5 +37,5 @@ meson setup build `
     -Dlibplacebo:opengl=disabled `
     -Dlibplacebo:dovi=enabled `
     -Dlibplacebo:unwind=disabled `
-    -Dbuildtype=debugoptimized  `
+    -Dbuildtype=release  `
     --reconfigure

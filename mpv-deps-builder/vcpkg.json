@@ -47,6 +47,7 @@
     "luajit",
     "mujs",
     "libjxl",
-    "libarchive"
+    "libarchive",
+    "libbluray"
   ]
 }
