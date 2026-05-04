@@ -6,27 +6,40 @@
     {
       "name": "ffmpeg",
       "features": [
-        "gpl",
+        "avcodec",
+        "avdevice",
+        "avfilter",
+        "avformat",
+        "bzip2",
+        "freetype",
+        "iconv",
+        "lzma",
+        "mp3lame",
+        "openjpeg",
+        "openmpt",
+        "opus",
+        "snappy",
+        "soxr",
+        "speex",
+        "swresample",
+        "swscale",
+        "theora",
+        "vorbis",
+        "zlib",
         "openssl",
         "xml2",
-        "aom",
         "dav1d",
-        "nvcodec",
         "webp"
       ]
     },
     "openssl",
     {
       "name": "harfbuzz",
-      "features": [
-        "directwrite"
-      ]
+      "features": ["directwrite"]
     },
-     {
+    {
       "name": "lcms",
-      "features": [
-        "fastfloat"
-      ]
+      "features": ["fastfloat"]
     },
     "dirent",
     "libass",
