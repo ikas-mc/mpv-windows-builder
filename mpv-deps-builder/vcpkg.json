@@ -61,6 +61,20 @@
     "mujs",
     "libjxl",
     "libarchive",
-    "libbluray"
+    "libbluray",
+      {
+      "name": "curl",
+      "features": [
+        "ssl",
+        "brotli",
+        "http2",
+        "http3",
+        "httpsrr",
+        "non-http",
+        "openssl",
+        "idn",
+        "websockets"
+      ]
+    }
   ]
 }

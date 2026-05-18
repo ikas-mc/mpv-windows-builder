@@ -28,6 +28,7 @@ meson setup build `
     -Dx11=disabled  `
     -Dwayland=disabled `
     -Dtests=false `
+    -Dlibcurl=enabled `
     -Dlibplacebo:demos=false `
     -Dlibplacebo:lcms=enabled `
     -Dlibplacebo:shaderc=enabled `
