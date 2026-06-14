@@ -43,7 +43,7 @@ jobs:
         $env:PATH = ($env:PATH -split ';' | Where-Object { $_ -ne 'C:\Program Files\LLVM\bin' -and `
                                                            $_ -ne 'C:\Program Files\CMake\bin' -and `
                                                            $_ -ne 'C:\Strawberry\c\bin' }) -join ';'
-        $env:VS_ROOT="C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
+        $env:VS_ROOT="C:\Program Files\Microsoft Visual Studio\18\Enterprise"
         $env:VCPKG_ROOT=$env:VCPKG_INSTALLATION_ROOT
         .\build-deps.ps1
 
@@ -52,7 +52,7 @@ jobs:
         $env:PATH = ($env:PATH -split ';' | Where-Object { $_ -ne 'C:\Program Files\LLVM\bin' -and `
                                                            $_ -ne 'C:\Program Files\CMake\bin' -and `
                                                            $_ -ne 'C:\Strawberry\c\bin' }) -join ';'
-        $env:VS_ROOT="C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
+        $env:VS_ROOT="C:\Program Files\Microsoft Visual Studio\18\Enterprise"
         .\build-mpv.ps1
 
     - name: Print build log
