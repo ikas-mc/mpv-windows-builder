@@ -2,7 +2,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO libcdio/libcdio
     REF ${VERSION}
-    SHA512 0408e8ba8dd5521e97ca5ce7662e0cffe8504ce63f862b0553133428b8885be766c09909d9e7050a9c531a02504993d70ee7dfc47c430d3beceb69332be07b90
+    SHA512 006eeaff4a13c3b2344ea1bbf109768afc7acebccc54665fc808197c76d99b40c0dc09c1c86dbb58f6dec2a8c0fa1878b96d991fae83e95a22d8966bbdc1a19f
     HEAD_REF master
     PATCHES
         no-docs.diff
